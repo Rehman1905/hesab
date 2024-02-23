@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Calculator</title>
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <main>
+        <section class="section2">
+            <p id="result">0</p>
+        </section>
+        <section class="section3">
+            <button class="white" onclick="clearDisplay()">AC</button>
+            <button class="white" onclick="deleteLast()">←</button>
+            <button class="white" onclick="addOperator('%')">%</button>
+            <button class="orange" onclick="addOperator('/')">÷</button>
+            <button class="black" onclick="appendNumber(7)">7</button>
+            <button class="black" onclick="appendNumber(8)">8</button>
+            <button class="black" onclick="appendNumber(9)">9</button>
+            <button class="orange" onclick="addOperator('*')">X</button>
+            <button class="black" onclick="appendNumber(4)">4</button>
+            <button class="black" onclick="appendNumber(5)">5</button>
+            <button class="black" onclick="appendNumber(6)">6</button>
+            <button class="orange" onclick="addOperator('-')">-</button>
+            <button class="black" onclick="appendNumber(1)">1</button>
+            <button class="black" onclick="appendNumber(2)">2</button>
+            <button class="black" onclick="appendNumber(3)">3</button>
+            <button class="orange" onclick="addOperator('+')">+</button>
+            <button class="blackZero" onclick="appendNumber(0)">0</button>
+            <button class="black" onclick="addDecimal()">,</button>
+            <button class="orange" onclick="calculateResult()">=</button>
+        </section>
+    </main>
+</body>
+</html>
