@@ -4,7 +4,7 @@ let waitingForSecondOperand = false;
 let firstOperand = '';
 
 function updateDisplay() {
-    document.getElementById('result').textContent = displayValue;
+    document.querySelector('#result').textContent = displayValue;
 }
 
 function appendNumber(number) {
@@ -12,7 +12,11 @@ function appendNumber(number) {
         displayValue = String(number);
         waitingForSecondOperand = false;
     } else {
-        displayValue = displayValue === '0' ? String(number) : displayValue + number;
+        if (displayValue === '0') {
+            displayValue = String(number);
+        } else {
+            displayValue = displayValue + number;
+        }
     }
     updateDisplay();
 }
@@ -42,7 +46,6 @@ function addOperator(op) {
 function calculateResult() {
     const prevValue = parseFloat(firstOperand);
     const currentValue = parseFloat(displayValue);
-
     if (operator === '+') {
         displayValue = prevValue + currentValue;
     } else if (operator === '-') {
@@ -51,8 +54,9 @@ function calculateResult() {
         displayValue = prevValue * currentValue;
     } else if (operator === '/') {
         displayValue = prevValue / currentValue;
+    }else if(operator==='%'){
+        displayValue=prevValue/100
     }
-
     waitingForSecondOperand = true;
     updateDisplay();
     firstOperand = displayValue;
